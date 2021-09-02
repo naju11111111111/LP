@@ -1,0 +1,194 @@
+
+def play_again():
+  print("Caso queira jogar novamente, digite 's'. Caso contrário, digite 'n'.")
+  answer = input('>')
+  if answer == 's':
+    start()
+  else:
+    print("Programa Encerrado.")
+    
+def game_over():
+  print("Game Over :( ")
+  play_again()
+def vila ():
+  print ("\nVocê está na vila e avista duas casas próximas a você")
+  print ("Uma delas é a casa de sua avó")
+  print ("A outra é uma casa abandonada")
+  print ("\nVocê precisa coletar itens antes de embarcar nesta aventura!")
+  print ("Você decide ir primeiro...")
+  print ("1). Casa da avó")
+  print ("2). Casa abandonada")
+  answer = input(">")
+  if answer == "1":
+    casa_da_avo()
+  elif answer == "2":
+    print("Não há nada aqui!")
+    game_over()
+  else:
+    game_over("Nenhum número")
+def casa_da_avo ():
+   print ("Você está na casa da sua avó!")
+   print ("Assim que entra, avista alguns itens na dispensa de sua avó")
+   print ("Você encontra um sanduíche de queijo e mostarda em cima da mesa")
+   print ("Na mesa também, tem uma lupa")
+   print ("Na dispensa de sua avó tem uma lanterna e uma bússula")  
+   print ("Você olha pela janela e avista ao lado de fora, uma corda desgastada")
+   print ("Você pode escolher até três dos cinco itens a seguir")
+   variavel = [] 
+   # index:   0            1      2          3         4
+   variavel = ['sanduíche','lupa','lanterna','bússula','corda'] 
+   # elem:    1°           2°     3°         4°        5°
+   print(variavel)
+   resposta = []
+   tentativas = 0
+
+   while(tentativas < 3):
+    
+    entrada = input('escolha o item ')
+
+    if entrada in variavel:
+         resposta.append(entrada)
+         tentativas = tentativas + 1
+    else:
+         print('não existe')
+
+   print(resposta)
+ 
+   print ("Pronto! Agora que selecionamos os itens")
+   print ("vamos embarcar nesta aventura!")
+   print ("Você tem duas opções de caminho agora...")
+   print ("Você pode ir pela floresta (direita) ou pelo mar (esquerda)")
+   print ("Para ir pela floresta aperte d")
+   print ("Para ir pelo mar aperte e")
+   answer = input('>')
+   if "d" in answer:
+    floresta ()
+   elif "e" in answer:
+    mar ()
+def floresta():
+  print ("Você está na floresta!")
+  print ("e...")  
+  print ("Ao longe vê algo em chamas, mas não consegue identificar bem o que é")
+  print ("Você vai se aproximando daquele fogo")
+  print ("e...")
+  print ("percebe que é um CURUPIRA!!!")
+  print ("Você mal acredita no que vê e imediatamente você...")
+  print ("Opção 1). Você corre")
+  print ("Opção 2). Você se esconde")
+  answer = str(input())
+  if answer == "1":
+    game_over()   
+  elif answer == "2":
+    print("Esconder foi uma otima escolha.Voce despistou o curupira.")
+    correr()
+  else:
+    game_over()
+def mar():
+  print("\nAgora voce chegou a praia e esta seguindo seu caminho pela costa do mar")
+  print("Porem voce encontrou um boto")
+  print("Voce sabe que oboto-cor-de-rosa é uma lenda do folclore brasileiro, sendo muito influente na região Norte do país. Fala de um boto que se transforma em um homem belo e sedutor. Na forma humana, o boto seduz mulheres para engravidá-las. Essas mulheres são abandonadas pelo ser, que retorna para o rio em sua forma animal.A curiosidade do boto é que ele é alérgico a mostarda!! Se ele ingerir alguma quantidade de mostarda, ele morre ...")
+  print("Voce tem tres opcoes : ")
+  print("1)enfrentar o boto")
+  print("2)escolher um item da mochila para te ajudar a sair do perigo.")
+  print("3)correr do boto")
+  answer = input(">")
+  if answer == "1":
+        game_over()              
+  elif answer == "2":
+        mochila()
+  elif answer == "3":
+        game_over()
+  else:
+        game_over("resposta invalida")    
+
+def mochila():
+  print("\nVoce pode escolher um sanduiche ou uma corda.")
+  print("A corda pode ser usada como uma tentativa de derrotar o boto por forca.para escolher a corda digite 1.")
+  print("O sanduiche pode ser usado como uma oferta de paz.Para escolher o sanduiche digite 2.")
+  answer = input(">")
+  if answer == "1":
+        game_over()
+  elif answer == "2":
+        print("PARABENS!O boto era alergico ao seu sanduiche de mostarda e devido a sua esperteza voce esta livre para seguir a sua jornada.")
+        correr()
+  else:
+        game_over("As suas unicas escolhas era ou sanduiche ou corda.outras respostas nao sao validas.")
+def correr ():
+  print ("Ufa, você consegue correr")
+  print ("Ohhh não! O que é aquilo? Uma onça! Uma não, várias!")
+  print ("Ao correr, você foi para uma região muito perigosa, e agora está diante de um bando de onças.")
+  print ("Essa espécie de onça é noturna e vive em ambientes de mata fechada. Com isso, a espécie desenvolveu muita sensibilidade à luz, podendo ocorrer a cegueira parcial ou total em ambientes extremamente claros ou com incidência direta de luz.")
+  print ("Agora você está ali, parado diante de um bando de onças.")
+  print ("Você: ")
+  print ("1). Enfrenta o bando")
+  print ("2). Ver itens da mochila")
+ 
+  answer = input (">")
+ 
+  if answer == "1":
+    game_over ()   
+  elif answer == "2":
+    itens_mochila()
+def cachoeira ():
+
+    print ("Parabéns! Você chegou na cachoeira.")
+    print ("Agora, a sua última missão é encontrar a planta medicinal específica para as crises de epilepsia da sua mãe.")
+    print ("Como você é esperto, você trouxe na sua mochila um glossário com as espécies dessa região, e suas funções medicinais.")
+    print ("Identifique no menu a seguir, qual a planta em que procuras: ")
+    print ("1). Valeriana officinalis - da família das Valerianaceae.\n Essa planta é famosa por seu uso fitoterápico calmante, auxiliando no combate à insônia, ataques de pânico e de ansiedade.")
+    print ("\n 2). Cannabis sativa - da família das Cannabis.\n As folhas são finamente recortadas em segmentos lineares e a resina encontrada nas flores dessa planta tem propriedades psicoativas podendo atuar como analgésico,calmante do sistema nervoso e sedativo, sendo usada em alguns casos para crises de epilepsia.")
+    print ("\n 3). Artemísia vulgaris - da família da Asteraceae \n Considerada uma das plantas mais antigas do mundo, a artemísia tem uma composição que lhe confere propriedades digestivas. Além de ajudar a aliviar dores de estômago e promover uma digestão mais saudável, a artemísia é usada para o tratamento de dores menstruais e do pós-parto")
+    
+    answer = input ('>')
+    
+
+    if answer == "1":
+      game_over ()
+      
+
+    elif answer == "2":
+      print ("Parabéns! Você encontrou a planta certa para as crises de epilepsia da sua mãe. Agora, corre já pra casa para preparar um chá potente para ela :)")
+      print ("Você chegou ao final do jogo, parabéns!")
+
+    else :
+      game_over ()
+      print ("Game Over!!")
+def itens_mochila():
+  print ("Você escolheu ver os itens da mochila: ")
+  print ("Escolha o item que deseja utilizar: ")
+  print ("1). Bússola")
+  print ("2). Lanterna")
+ 
+  answer = input ('>')
+  
+  
+  if answer == "1":
+    game_over ()
+    
+    
+  elif answer == "2":
+     print ("Você escolheu a lanterna!")
+     print ("E a sua opção foi bastante inteligente: você conseguiu ofuscar o bando e espantá-los com a luz da lanterna.")
+     print ("Parabéns, segue em frente!")
+     print (">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+     cachoeira()
+  else :
+     game_over ()
+ 
+def start ():
+  print ("Sua mãe está doente e precisa de remédio.")
+  print (" E próximo a sua vila tem uma cachoeira que tem uma grande variedade de plantas de caráter medicinal.")
+  print ("E nela, possui uma planta cuja característica medicinal é ajudar com a epilepsia.") 
+  print ("E AÍ, VAMOS NESSA AVENTURA?") 
+  print ("Se sim, aperete s")
+  print ("Se não, aperte n")
+ 
+ 
+  answer = input(">").lower() 
+  if "s" in answer:
+   vila ()
+  elif "n" in answer:
+   game_over () 
+start () 
+
+
